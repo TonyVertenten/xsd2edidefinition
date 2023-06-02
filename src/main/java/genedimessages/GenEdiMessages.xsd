@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/GenEdiMessages"
+	xmlns:tns="http://www.example.org/GenEdiMessages"
+	elementFormDefault="qualified">
+
+    <complexType name="GENEDIMESSAGESType">
+    	<sequence>
+    		<element name="GEN_EDI_MESSAGE" type="tns:GENEDIMESSAGEType"
+    			minOccurs="1" maxOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="GENEDIMESSAGEType">
+    <sequence>
+      <element type="string" name="NAME"/>
+      <element type="string" name="DESCRIPTION"/>
+      <element type="string" name="SENDER"/>
+      <element type="string" name="RECEIVER"/>
+      <element type="string" name="TYPE"/>
+      <element type="string" name="DIRECTION"/>
+      <element type="string" name="SOFTWARE_COMPONENTS"/>
+      <element type="string" name="LOGLEVEL_ERROR_REPORT"/>
+      <element type="string" name="LOGLEVEL_PROCESSING"/>
+      <element type="string" name="SAVE_INCOMING"/>
+      <element type="string" name="SAVE_OUTGOING"/>
+      <element type="string" name="CREATION_TIME"/>
+      <element type="string" name="CREATION_USER"/>
+      <element type="string" name="MODIFICATION_TIME"/>
+      <element type="string" name="MODIFICATION_USER"/>
+      <element type="string" name="ENTITY"/>
+      <element type="string" name="HEADER_INCLUDE_VERSION"/>
+      <element type="string" name="SUPER_CLASS"/>
+      <element type="string" name="DESTINATION_TYPE"/>
+      <element type="string" name="DESTINATION_NAME"/>
+      <element type="string" name="CONNECTION_URL"/>
+      <element type="string" name="CONNECTION_USER"/>
+      <element type="string" name="JAXB_CLASS"/>
+      <element type="string" name="SMOOKS_CONFIG"/>
+      <element type="string" name="PRE_PROCESS"/>
+      <element type="string" name="POST_PROCESS"/>
+      <element type="string" name="OUTPUT_FORMAT"/>
+      <element type="string" name="DECIMAL_FORMAT"/>
+      <element type="string" name="MESSAGE_DELIMITER"/>
+      <element type="tns:GENEDISEGMENTSType" name="GEN_EDI_SEGMENTS"/>
+      <element type="string" name="GEN_EDI_CLEANUP_PARAMETERS"/>
+      <element type="string" name="GEN_EDI_SEARCH_FIELDS"/>
+     </sequence>
+    <attribute type="string" name="MessageCode"/>
+    <attribute type="string" name="MsgControllingAgency"/>
+    <attribute type="string" name="msgMainVersion"/>
+    <attribute type="string" name="MsgVersion"/>
+    <attribute type="string" name="MsgRelease"/>
+    <attribute type="string" name="msgSubrelease"/>
+    </complexType>
+
+    <complexType name="GENEDISEGMENTSType">
+    <sequence>
+    <element name="GEN_EDI_SEGMENT" type="tns:GENEDISEGMENTType" minOccurs="1" maxOccurs="unbounded"/>
+    </sequence>
+    </complexType>
+
+    <complexType name="GENEDISEGMENTType">
+        <sequence>
+      <element type="string" name="PARENT_CODE"/>
+      <element type="string" name="CODE"/>
+      <element type="string" name="SUBCODE"/>
+      <element type="string" name="SEGMENT_NAME"/>
+      <element type="string" name="DESCRIPTION"/>
+      <element type="string" name="TYPE"/>
+      <element type="string" name="SORT_ORDER"/>
+      <element type="string" name="MIN_OCCURRENCE"/>
+      <element type="string" name="MAX_OCCURRENCE"/>
+      <element type="string" name="QUERY_STATEMENT"/>
+      <element type="string" name="QUERY_MAPPING"/>
+      <element type="string" name="QUERY_BUFFERS"/>
+      <element type="string" name="SEGMENT_REFERENCE"/>
+      <element type="string" name="INACTIVE"/>
+      <element type="string" name="INACTIVATION_TIME"/>
+      <element type="string" name="INACTIVATION_USER"/>
+      <element type="dateTime" name="CREATION_TIME"/>
+      <element type="string" name="CREATION_USER"/>
+      <element type="dateTime" name="MODIFICATION_TIME"/>
+      <element type="string" name="MODIFICATION_USER"/>
+      <element type="string" name="ENTITY"/>
+      <element type="string" name="PRE_PROCESS"/>
+      <element type="string" name="POST_PROCESS"/>
+      <element type="string" name="ADDITIONAL_BEHAVIOUR"/>
+      <element type="string" name="NAMESPACE_PREFIX"/>
+      <element type="tns:GENEDIDATATAGSType" name="GEN_EDI_DATATAGS"/>
+    </sequence>
+    
+    </complexType>
+
+    <complexType name="GENEDIDATATAGSType">
+    <sequence>
+    <element name="GEN_EDI_DATATAG" type="tns:GENEDIDATATAGType" minOccurs="0" maxOccurs="unbounded"></element>
+    </sequence>
+    </complexType>
+
+    <complexType name="GENEDIDATATAGType">
+    <sequence>
+          <element type="string" name="CODE"/>
+      <element type="string" name="DATATAG_NAME"/>
+      <element type="string" name="DESCRIPTION"/>
+      <element type="string" name="SEQUENCE"/>
+      <element type="string" name="FIELD_FORMAT"/>
+      <element name="FIELD_TYPE" type="string"></element>
+      <element type="string" name="MANDATORY"/>
+      <element name="SOURCE" type="string"></element>
+      <element type="string" name="SOURCE_FIELD"/>
+      <element type="string" name="LITERAL_VALUE"/>
+      <element type="string" name="FUNCTION_NAME"/>
+      <element type="string" name="PROPERTY_NAME"/>
+      <element type="string" name="START_POSITION"/>
+      <element type="string" name="LENGTH"/>
+      <element type="string" name="COMPOSITE_POSITION"/>
+      <element type="string" name="CONVERSION_TYPE"/>
+      <element type="string" name="CONVERSION_CONDITION"/>
+      <element type="string" name="ATTRIBUTE"/>
+      <element type="string" name="ATTRIBUTE_CODE"/>
+      <element type="string" name="OMIT_WHEN_EMPTY"/>
+      <element type="string" name="INACTIVE"/>
+      <element type="string" name="INACTIVATION_TIME"/>
+      <element type="string" name="INACTIVATION_USER"/>
+      <element type="string" name="CREATION_TIME"/>
+      <element type="string" name="CREATION_USER"/>
+      <element type="string" name="MODIFICATION_TIME"/>
+      <element type="string" name="MODIFICATION_USER"/>
+      <element type="string" name="ENTITY"/>
+      <element type="string" name="ZERO_WHEN_NULL"/>
+      <element type="string" name="NAMESPACE_PREFIX"/>
+        </sequence>
+    </complexType>
+
+    <element name="GEN_EDI_MESSAGES" type="tns:GENEDIMESSAGESType"></element>
+</schema>
